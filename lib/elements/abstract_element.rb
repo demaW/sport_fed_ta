@@ -16,7 +16,7 @@ class AbstractElement
       begin
         res = @wrapped_element.displayed?
         print "element #{@name}: "
-        puts(status ? 'DISPLAYED' : 'NOT DISPLAYED ')
+        puts(res ? 'DISPLAYED' : 'NOT DISPLAYED ')
       rescue
         puts "Element does not exist"
       end

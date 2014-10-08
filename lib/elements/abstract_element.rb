@@ -15,6 +15,7 @@ class AbstractElement
       puts(status  ? 'DISPLAYED' : 'NOT DISPLAYED ')
       return @res
     else
+      puts "#{@wrapped_element} is nil"
       return false
     end
   end

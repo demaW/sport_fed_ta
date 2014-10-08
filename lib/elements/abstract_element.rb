@@ -10,10 +10,10 @@ class AbstractElement
 
   def is_displayed
     if @wrapped_element.nil?
-      @res = @wrapped_element.displayed?
+      res = @wrapped_element.displayed?
       print "element #{@name}: "
-      puts(status  ? 'DISPLAYED' : 'NOT DISPLAYED ')
-      return @res
+      puts(status  ? 'DISPLAYED' : 'NOT DISPLAYED ')   # ексепшени чи викидає
+      return res
     else
       puts "#{@wrapped_element} is nil"
       return false

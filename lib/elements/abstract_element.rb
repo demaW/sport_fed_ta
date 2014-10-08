@@ -7,23 +7,22 @@ class AbstractElement
   end
 
 
-
   def is_displayed
+    res = false
     if @wrapped_element.nil?
-      res = @wrapped_element.displayed?
-      print "element #{@name}: "
-      puts(status  ? 'DISPLAYED' : 'NOT DISPLAYED ')   # ексепшени чи викидає
+      puts "#{@wrapped_element} is nil"
       return res
     else
-      puts "#{@wrapped_element} is nil"
-      return false
+      begin
+        res = @wrapped_element.displayed?
+        print "element #{@name}: "
+        puts(status ? 'DISPLAYED' : 'NOT DISPLAYED ')
+      rescue
+        puts "Element does not exist"
+      end
+      return res
     end
   end
-
-
-
-
-
 
   def get_name
     @name

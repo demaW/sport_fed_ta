@@ -9,10 +9,7 @@ class AbstractElement
 
   def is_displayed
     res = false
-    if @wrapped_element.nil?
-      puts "#{@wrapped_element} is nil"
-      return res
-    else
+    unless @wrapped_element.nil?
       begin
         res = @wrapped_element.displayed?
         print "element #{@name}: "
@@ -20,6 +17,9 @@ class AbstractElement
       rescue
         puts "Element does not exist"
       end
+      return res
+    else
+      puts "#{@wrapped_element} is nil"
       return res
     end
   end

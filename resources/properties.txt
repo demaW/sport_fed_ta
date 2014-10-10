@@ -1,0 +1,2 @@
+driver=ff
+chrome.path=../../resources/chromedriver.exe

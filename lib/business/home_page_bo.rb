@@ -11,6 +11,3 @@ class HomePageBO
     @home_page.exist
   end
 end
-
-home = HomePageBO.new
-puts home.exist

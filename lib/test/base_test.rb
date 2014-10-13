@@ -1,17 +1,18 @@
 require 'test/unit'
-require '../../lib/driver/driver'
-require '../../lib/driver/properties'
+require_relative '../../lib/driver/properties'
+require_relative '../../lib/driver/driver_type'
 class BaseTest < Test::Unit::TestCase
   @@base_url = Properties.new.get_properties('url')
 
    def setup
+     $driver = DriverType.new.init
      puts 'Start set up'
-     Driver.driver.get @@base_url
+     $driver.get @@base_url
 
    end
 
    def teardown
-    # Driver.driver.close
+     $driver.close
    end
 
 

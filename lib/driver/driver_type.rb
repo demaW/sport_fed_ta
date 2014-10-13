@@ -1,3 +1,4 @@
+require 'selenium-webdriver'
 require '../../lib/driver/properties'
 class DriverType
 

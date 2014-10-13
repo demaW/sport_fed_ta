@@ -1,2 +1,3 @@
-driver=ff
+driver=chrome
 chrome.path=../../resources/chromedriver.exe
+url=http://www.sport195.com/

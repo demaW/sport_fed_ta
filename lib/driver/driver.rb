@@ -1,7 +1,12 @@
 require 'selenium-webdriver'
-class Driver
-  attr_accessor :driver
-  def initialize
-    @driver = Selenium::WebDriver.for :firefox
+require '../../lib/driver/driver_type'
+class  Driver
+
+  @@driver = DriverType.new.init
+
+  def self.driver
+    @@driver
   end
+
+
 end

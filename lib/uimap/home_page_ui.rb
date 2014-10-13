@@ -6,8 +6,7 @@ class HomePageUI < BasePage
   attr_accessor :hash_elements
 
   def initialize
-    @driver = Selenium::WebDriver.for :firefox
-#    @driver = super.driver
+    @driver = super.driver
     @driver.get 'http://www.sport195.com/#'
     @hash_elements = {
         sign_up: {xpath: ".//*[@class='splash']//a[@class='btn btn-danger btn-sign-up1']"},

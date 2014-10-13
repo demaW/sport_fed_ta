@@ -1,5 +1,6 @@
 require_relative('base_page')
 require_relative('../../lib/elements/abstract_element')
+require_relative('../../lib/utils/log')
 
 class HomePageUI < BasePage
   attr_accessor :hash_elements
@@ -9,7 +10,7 @@ class HomePageUI < BasePage
 #    @driver = super.driver
     @driver.get 'http://www.sport195.com/#'
     @hash_elements = {
-        sign_up: {xpath: ".//*[@class='splash']//a[@class='btn btn-danger btn-sign-up']"},
+        sign_up: {xpath: ".//*[@class='splash']//a[@class='btn btn-danger btn-sign-up1']"},
         log_in: {xpath: ".//*[@class='splash']//a[@class='btn btn-primary btn-login']"}
     }
   end
@@ -18,7 +19,9 @@ class HomePageUI < BasePage
     if @sign_up_button.nil?
       begin
         @sign_up_button = AbstractElement.new(@driver.find_element(@hash_elements[:sign_up]))
-      rescue
+      rescue Exception => e
+        $logger.error "#{__method__} not found element"
+        $logger.error "#{e.message}"
         return nil
       end
     else
@@ -31,6 +34,8 @@ class HomePageUI < BasePage
       begin
         @log_in_button = AbstractElement.new(@driver.find_element(@hash_elements[:log_in]))
       rescue
+        $logger.error "#{__method__} not found element"
+        $logger.error "#{e.message}"
         return nil
       end
     else
@@ -52,7 +57,7 @@ class HomePageUI < BasePage
     if init_sign_up.nil? || init_log_in.nil?
       return false
     else
-      return init_sign_up.present? && init_log_in.present?
+      return init_sign_up.displayed? && init_log_in.displayed?
     end
   end
 

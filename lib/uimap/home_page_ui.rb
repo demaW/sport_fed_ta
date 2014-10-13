@@ -22,8 +22,9 @@ class HomePageUI < BasePage
   end
 
   def exist
-   element = @driver.find_element(@hash_elements[:sign_up])
-   return exist_base(element)
+   element1 = @driver.find_element(@hash_elements[:sign_up])
+   element2 = @driver.find_element(@hash_elements[:log_in])
+   return exist_base(element1) && exist_base(element2)
   end
 
 end

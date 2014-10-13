@@ -12,4 +12,10 @@ class AbstractElement
   $logger.info "#{__method__} on element"
   end
 
+  def displayed?
+    status = @element.displayed?
+    $logger.info "element is displayed? :  #{status}"
+    return status
+  end
+
 end

@@ -23,10 +23,10 @@ class AbstractElement < Selenium::WebDriver::Element
     begin
       @is_element_found = true
       return @driver.find_element(element_locator)
-    rescue Exception => e
+    rescue Selenium::WebDriver::Error::NoSuchElementError
       @is_element_found = false
       $logger.error "#{__method__} method in abstract_element class: Element not found !"
-      $logger.error "#{e.message}"
+      $logger.error "#{element_locator}"
       return nil
     end
   end

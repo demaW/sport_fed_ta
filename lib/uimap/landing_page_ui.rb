@@ -1,4 +1,4 @@
-class LandinngPageUI
+class LandingPageUI
   attr_accessor :hashElement
   def initialize
   @hashElement = {

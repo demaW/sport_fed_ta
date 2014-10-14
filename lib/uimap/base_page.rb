@@ -3,7 +3,7 @@ require 'selenium-webdriver'
 
 class BasePage
   attr_accessor :driver
-  def initialize()
+  def initialize
     driver_instance = DriverType.new()
     @driver = driver_instance
   end

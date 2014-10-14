@@ -1,5 +1,5 @@
 require 'selenium-webdriver'
-require_relative '../utils/log'
+require_relative '../../lib/utils/log'
 class AbstractElement < Selenium::WebDriver::Element
   attr_accessor :is_element_found
   def initialize(driver, element_locator)

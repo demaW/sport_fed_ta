@@ -1,9 +1,9 @@
-require_relative '../uimap/home_page_ui'
+require_relative '../../lib/uimap/home_page_ui'
 require 'logger'
 require_relative '../utils/log'
 
 class HomePageBO
-  def initialize()
+  def initialize
     @home_page = HomePageUI.new
     $logger.info "#{self.inspect}"
   end

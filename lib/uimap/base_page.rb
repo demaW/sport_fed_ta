@@ -3,6 +3,4 @@ require 'selenium-webdriver'
 
 class BasePage
 
-text
-dsfsf
 end

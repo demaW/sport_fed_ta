@@ -7,5 +7,6 @@ class LandingPageUI
       input_password: {id: 'password'},
       login_submit: {xpath: "//button[@class='btn btn-primary btn-login']"}
   }
+    p 'smt'
   end
 end
